@@ -1,0 +1,126 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r7p9.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Sun Dec  9 23:36:40 PST 2018
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/practice-exam_20181210/chsu
+
+= Git history ==================================================================
+$> git -C /var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user log --pretty='%H - %an, %ad : %s'
+921651bf6538a3dd57ac4d0456fb6e7d4efc9a2a - Cheng-en Hsu, Sun Dec 9 23:36:25 2018 -0800 : rpn_calc
+47a65914788369de2f473a97e3fdd401692a27ab - Cheng-en Hsu, Sun Dec 9 22:50:50 2018 -0800 : fprime
+84f15b3996e6289f22d58cbd9414fab461523a34 - Cheng-en Hsu, Sun Dec 9 22:12:28 2018 -0800 : str_capitalizer
+fcc375417a0d5fbc6019626815a65de26b2adf88 - Cheng-en Hsu, Sun Dec 9 22:07:40 2018 -0800 : inter
+f7211998ae232baf5fb2313d540fb88272640f06 - Cheng-en Hsu, Sun Dec 9 22:02:47 2018 -0800 : rotone
+e9227bcf411c76ac54aeefbf50fb10509f32b333 - Cheng-en Hsu, Sun Dec 9 22:00:53 2018 -0800 : maff_alpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1572 Dec  9 23:36 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Dec  9 23:36 fprime
+drwxr-xr-x  3 deepthought  deepthought   102 Dec  9 23:36 inter
+drwxr-xr-x  3 deepthought  deepthought   102 Dec  9 23:36 maff_alpha
+drwxr-xr-x  3 deepthought  deepthought   102 Dec  9 23:36 rotone
+drwxr-xr-x  4 deepthought  deepthought   136 Dec  9 23:36 rpn_calc
+drwxr-xr-x  3 deepthought  deepthought   102 Dec  9 23:36 str_capitalizer
+
+/var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user/fprime:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1513 Dec  9 23:36 fprime.c
+
+/var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user/inter:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1404 Dec  9 23:36 inter.c
+
+/var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user/maff_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  992 Dec  9 23:36 maff_alpha.c
+
+/var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user/rotone:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1278 Dec  9 23:36 rotone.c
+
+/var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user/rpn_calc:
+total 24
+-rw-r--r--  1 deepthought  deepthought  4931 Dec  9 23:36 rpn_calc.c
+-rw-r--r--  1 deepthought  deepthought  1002 Dec  9 23:36 rpn_calc.h
+
+/var/folders/8h/rw29m8xs4bl2cnwdzwlsfs140000gp/T/tmphqwbT5/user/str_capitalizer:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1703 Dec  9 23:36 str_capitalizer.c
+ 
+= rpn_calc =====================================================================
+$> gcc -Wextra -Wall -Werror rpn_calc.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./ji8f0lns1cm8g5h9pa4gzcgp 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./jhtl2jpycu7o2lo3f9a2ldpl "2 3 -" "5 6 +"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./feg8v05amczimugln1p5v2np "2 -"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./i25ahwnwnmo6y939a3ys8t2x "-"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./0w3yq8q7egi7s0i483pf6p72 "2 5 6 -"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./3q2yc75gg73uiv1e2esyb6in "3 4 +"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./6grdocilq00oovpazapv9a4c "2 4 + 8 *"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./7vjfaqn43e52uoi37kg09u44 "50 10 25 + -"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./udknrsoh9945os9h4sk6kkal "1000 5 2 * /"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./nb52ph6kvvxcry39hsj1a2lw "1000 3 %"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./mqdl34t773dxk3nmd5x3ljyo "1000 0 /"
+Command './mqdl34t773dxk3nmd5x3ljyo "1000 0 /"' got killed by a Floating exception (Signal -8)
+Grade: 0
+
+= Final grade: 0 ===============================================================
